@@ -9,5 +9,5 @@ urlpatterns = [
     path('autores/', views.ListAutores.as_view(), name="autores"),
     path('saludo/', saludo),
     path('fecha/', fecha),
-    path('edades/<int:agno>', edad)
+    path('edades/<int:edad><int:agno>', edad)
 ]

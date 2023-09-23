@@ -23,11 +23,11 @@ def fecha(request):
 
     return HttpResponse (docu)
 
-def edad(request, agno):
+def edad(request, edad, agno):
 
-    edad_actual = 18
+    #edad_actual=18
     periodo=agno-2023
-    edad_futura=edad_actual+periodo
+    edad_futura=edad+periodo
     docu = """<html><body><h2>
 
     En el año %s tendrás %s años
