@@ -1,10 +1,20 @@
 from django.http import HttpResponse
 import datetime
+from django.template import Template, Context
+
 from django.views.generic.base import RedirectView
 
 def saludo(request):
 
-    doc_externo=open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/plantillas/plantilla1.html")
+    doc_externo = open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/plantillas/plantilla1.html")
+
+    plt = Template(doc_externo.read())
+
+    doc_externo-close()
+
+    ctx=Context()
+
+    docu = plt.render(ctx)
 
     return HttpResponse (docu)
 
