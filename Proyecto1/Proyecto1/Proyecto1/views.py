@@ -4,11 +4,7 @@ from django.views.generic.base import RedirectView
 
 def saludo(request):
 
-    docu = """<html><body><h1>
-
-    Hola a todos
-
-    </h1></body></html>"""
+    doc_externo=open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/plantillas/plantilla1.html")
 
     return HttpResponse (docu)
 
