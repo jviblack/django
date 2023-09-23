@@ -4,15 +4,27 @@ from django.template import Template, Context
 
 from django.views.generic.base import RedirectView
 
+class Persona(object):
+    def __init__(self, nombre, apellido):
+        self.nombre=nombre
+        self.apellido=apellido
+        pass
+
 def saludo(request):
+
+    p1=Persona("JavI", "Couto")
+    #nombre = "Javi"
+    #apellido = "Couto"
+
+    ahora=datetime.datetime.now()
 
     doc_externo = open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/plantillas/plantilla1.html") 
 
     plt = Template(doc_externo.read())
 
-    doc_externo-close()
+    doc_externo.close()
 
-    ctx=Context()
+    ctx=Context({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora})
 
     docu = plt.render(ctx)
 
