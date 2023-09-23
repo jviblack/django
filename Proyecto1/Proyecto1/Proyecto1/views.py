@@ -24,7 +24,7 @@ def fecha(request):
 
     return HttpResponse (docu)
 
-def edad(request, edad, agno):
+def edades(request, edad, agno):
 
     #edad_actual=18
     periodo=agno-2023
