@@ -1,6 +1,14 @@
 <html><body><h1 style="color:aquamarine">
 
     Hola a todos desde la plantilla</h1>
+
+    {% if nombre_yo == 'Javi' %}
+
+    <p>El curso lo imparte el profesor titular</p>
+
+    {% endif %}
+
+
     <p>El nombre del profe es: {{nombre_yo.upper}} {{apellido_yo.upper}}</p>
     <p>Estamos viendo las plantillas a d&iacute;a: {{momento_actual.day}} / {{momento_actual.month}}</p>
 
