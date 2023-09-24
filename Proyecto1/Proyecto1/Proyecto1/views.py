@@ -12,9 +12,11 @@ class Persona(object):
 
 def saludo(request):
 
-    p1=Persona("JavI", "Couto")
+    p1=Persona("Javi", "Couto")
     #nombre = "Javi"
     #apellido = "Couto"
+
+    temas_curso = ["Plantillas", "Modelos", "Formularios", "Vistsa", "Despliegue"]
 
     ahora=datetime.datetime.now()
 
@@ -24,7 +26,7 @@ def saludo(request):
 
     doc_externo.close()
 
-    ctx=Context({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora})
+    ctx=Context({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
 
     docu = plt.render(ctx)
 
