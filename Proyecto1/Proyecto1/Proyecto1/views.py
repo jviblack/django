@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
+from django.template import loader
 
 from django.views.generic.base import RedirectView
 
@@ -20,15 +21,15 @@ def saludo(request):
 
     ahora=datetime.datetime.now()
 
-    doc_externo = open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/plantillas/plantilla1.html") 
+    #doc_externo = open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/plantillas/plantilla1.html") 
+    #plt = Template(doc_externo.read())
+    #doc_externo.close()
 
-    plt = Template(doc_externo.read())
+    doc_externo = loader.get_template('template1.html')
 
-    doc_externo.close()
+    ctx = Context({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
 
-    ctx=Context({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
-
-    docu = plt.render(ctx)
+    docu = doc_externo.render(ctx)
 
     return HttpResponse (docu)
 
