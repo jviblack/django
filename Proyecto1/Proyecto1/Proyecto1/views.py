@@ -36,9 +36,16 @@ def saludo(request):
     #return HttpResponse(docu)
 
 
+def cursoPy(request):
+
+    fecha_actual = datetime.datetime.now()
+
+    return render(request, "cursoPy.html", {"fecha_actual":fecha_actual})
+
+
 def fecha(request):
 
-    fecha_actual=datetime.datetime.now()
+    fecha_actual = datetime.datetime.now()
 
     docu = """<html><body><h2>
 
