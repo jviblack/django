@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
-from django.template import loader
+from django.template.loader import get_template
 
 from django.views.generic.base import RedirectView
 
@@ -25,13 +25,13 @@ def saludo(request):
     #plt = Template(doc_externo.read())
     #doc_externo.close()
 
-    doc_externo = loader.get_template('template1.html')
+    doc_externo = get_template('template1.html')
 
-    ctx = Context({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
+    #ctx = Context({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
 
-    docu = doc_externo.render(ctx)
+    docu = doc_externo.render({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
 
-    return HttpResponse (docu)
+    return HttpResponse(docu)
 
 def fecha(request):
 
@@ -43,7 +43,7 @@ def fecha(request):
 
     </h2></body></html>""" % fecha_actual
 
-    return HttpResponse (docu)
+    return HttpResponse(docu)
 
 def edades(request, edad, agno):
 
@@ -56,4 +56,4 @@ def edades(request, edad, agno):
 
     </h2></body></html>""" %(agno, edad_futura) 
 
-    return HttpResponse (docu)
+    return HttpResponse(docu)
