@@ -20,7 +20,7 @@ def saludo(request):
 
     temas_curso = ["Plantillas", "Modelos", "Formularios", "Vistsa", "Despliegue"]
 
-    ahora=datetime.datetime.now()
+    ahora = datetime.datetime.now()
 
     #doc_externo = open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/templates/template1.html") 
     #plt = Template(doc_externo.read())
