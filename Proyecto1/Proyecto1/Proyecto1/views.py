@@ -2,6 +2,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 from django.template.loader import get_template
+from django.shortcuts import render
 
 from django.views.generic.base import RedirectView
 
@@ -25,13 +26,15 @@ def saludo(request):
     #plt = Template(doc_externo.read())
     #doc_externo.close()
 
-    doc_externo = get_template('template1.html')
-
     #ctx = Context({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
 
-    docu = doc_externo.render({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
+    #doc_externo = get_template('template1.html')
+    #docu = doc_externo.render({"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
 
-    return HttpResponse(docu)
+    return render(request, "template1.html", {"nombre_yo":p1.nombre, "apellido_yo":p1.apellido, "momento_actual":ahora, "temas":temas_curso})
+
+    #return HttpResponse(docu)
+
 
 def fecha(request):
 
