@@ -36,7 +36,7 @@ def saludo(request):
     #return HttpResponse(docu)
 
 
-def cursoPy(request):
+def curso_Py(request):
 
     fecha_actual = datetime.datetime.now()
 
