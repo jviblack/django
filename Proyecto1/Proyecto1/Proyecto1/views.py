@@ -21,7 +21,7 @@ def saludo(request):
 
     ahora=datetime.datetime.now()
 
-    #doc_externo = open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/plantillas/plantilla1.html") 
+    #doc_externo = open("C:/Users/javier.couto/django/Proyecto1/Proyecto1/Proyecto1/templates/template1.html") 
     #plt = Template(doc_externo.read())
     #doc_externo.close()
 
