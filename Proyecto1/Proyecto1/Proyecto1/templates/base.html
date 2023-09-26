@@ -11,7 +11,9 @@
     
     <h1 style="color: whitesmoke; background-color: black; text-align: center;">Mi primera página web en Django</h1>
 
-    <h3>Me encanta la programación</h3>
+    {% include "superior/templatebarra.html" %}
+
+    <h3 style="text-align: center;">Me encanta la programación</h3>
 
     {% block content %} {% endblock %}
 

@@ -43,6 +43,13 @@ def curso_Py(request):
     return render(request, "cursoPy.html", {"fecha_actual":fecha_actual})
 
 
+def curso_css(request):
+
+    fecha_actual = datetime.datetime.now()
+
+    return render(request, "cursocss.html", {"fecha_actual":fecha_actual})
+
+
 def fecha(request):
 
     fecha_actual = datetime.datetime.now()
