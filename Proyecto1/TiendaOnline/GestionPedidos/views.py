@@ -7,6 +7,7 @@ def busqueda_productos(request):
 
     return render(request, "busqueda_productos.html")
 
+
 def buscar(request):
 
     mensaje="Artículo buscado: %r" % request.GET["prd"]
