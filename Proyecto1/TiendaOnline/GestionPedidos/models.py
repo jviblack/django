@@ -30,3 +30,6 @@ class Pedidos(models.Model):
     fecha = models.DateField()
     entregado = models.BooleanField()
 
+    def __str__(self):
+
+        return 'El numero del pedido es %s' % (self.numero)

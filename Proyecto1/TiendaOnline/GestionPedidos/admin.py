@@ -8,8 +8,15 @@ class ClientesAdmin(admin.ModelAdmin):
     search_fields = ("nombre", "tfno")
 
 
-cla
+class ArticulosAdmin(admin.ModelAdmin):
+    list_filter = ("nombre", "seccion")
 
-admin.site.register(Clientes, ClientesAdmin)
-admin.site.register(Articulos)
-admin.site.register(Pedidos)
+
+class PedidosAdmin(admin.ModelAdmin):
+    list_display = ("fecha", "numero",)
+    list_filter = ("fecha",)
+    date_hierarchy = "fecha"
+
+admin.site.register(Clientes, ClientesAdmin,)
+admin.site.register(Articulos,  ArticulosAdmin)
+admin.site.register(Pedidos, PedidosAdmin)
