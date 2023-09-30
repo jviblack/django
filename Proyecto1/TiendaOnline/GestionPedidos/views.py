@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from GestionPedidos.models import Articulos
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 
@@ -36,6 +38,13 @@ def buscar(request):
 def contacto(request):
 
     if request.method=="POST":
+
+        subject=request.POST["ASUNTO"]
+        message=request.POST["MENSAJE"] + " " + request.POST["EMAIL"]
+        email_from=settings.EMAIL_HOST_USER
+        recipient_list=["javie.couto.dominguez@gmail.com"]
+        send_mail(subject, message, email_from, recipient_list)
+
 
         return render(request, "gracias.html")
 
