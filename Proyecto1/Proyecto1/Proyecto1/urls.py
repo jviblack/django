@@ -25,5 +25,5 @@ urlpatterns = [
     path('fecha/', fecha),
     path('edades/<int:edad>/<int:agno>', edades),
     path('curso_Py/', curso_Py),
-    path('curso_css/', curso_cs)
+    path('curso_css/', curso_css)
 ]
