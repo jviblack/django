@@ -28,4 +28,5 @@ urlpatterns = [
     #path('blog/', views.blog, name="Blog"),
     #path('contacto/', views.contacto, name="Contacto"),
     path('', include('WebApp.urls')),
+    path('servicios/', include('ServiciosApp.urls')),
 ]
